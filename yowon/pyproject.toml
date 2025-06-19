@@ -1,0 +1,17 @@
+[project]
+name = "yowon"
+version = "0.1.0"
+description = "OpenAI-only smolagents CLI and MCP server"
+authors = [{name = "OpenAI"}]
+dependencies = [
+    "smolagents[openai,mcp]>=1.18.0",
+    "anyio>=3.5",
+    "click>=8.1",
+]
+
+[project.scripts]
+yowon = "yowon.cli:cli"
+yowon-mcp = "yowon.server:main"
+
+[tool.uv]
+# This section allows `uv` to create an isolated environment
