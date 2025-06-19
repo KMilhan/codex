@@ -77,6 +77,12 @@ Install globally:
 npm install -g @openai/codex
 ```
 
+For Python enthusiasts, an experimental entry point is available:
+
+```shell
+python codex-cli/bin/codex.py --help
+```
+
 Next, set your OpenAI API key as an environment variable:
 
 ```shell

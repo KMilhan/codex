@@ -25,7 +25,8 @@ Codex supports a rich set of configuration options. Note that the Rust CLI uses 
 
 Codex CLI functions as an MCP client that can connect to MCP servers on startup. See the [`mcp_servers`](./config.md#mcp_servers) section in the configuration documentation for details.
 
-It is still experimental, but you can also launch Codex as an MCP _server_ by running `codex mcp`. Use the [`@modelcontextprotocol/inspector`](https://github.com/modelcontextprotocol/inspector) to try it out:
+It is still experimental, but you can also launch Codex as an MCP _server_ by running `codex mcp`. Use the [`@modelcontextprotocol/inspector`](https://github.com/modelcontextprotocol/inspector) to try it out.
+A smolagents-based Python client lives in `mcp-client/py` and can cooperate with other agents. A minimal `mcp_server.py` script demonstrates how to expose tools purely in Python.
 
 ```shell
 npx @modelcontextprotocol/inspector codex mcp
@@ -67,3 +68,7 @@ This folder is the root of a Cargo workspace. It contains quite a bit of experim
 - [`exec/`](./exec) "headless" CLI for use in automation.
 - [`tui/`](./tui) CLI that launches a fullscreen TUI built with [Ratatui](https://ratatui.rs/).
 - [`cli/`](./cli) CLI multitool that provides the aforementioned CLIs via subcommands.
+- [`apply-patch/src/py`](./apply-patch/src/py) Python port of `seek_sequence` used for patch utilities.
+- [`mcp-client/py`](./mcp-client/py) Python implementation of the MCP client using `smolagents`.
+- [`mcp-client/py/mcp_server.py`](./mcp-client/py/mcp_server.py) Example MCP server written in Python.
+- [`../yowon`](../yowon) Minimal `uv` project exposing an OpenAI-only CLI and MCP server with conversational context.
